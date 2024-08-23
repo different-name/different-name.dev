@@ -1,4 +1,4 @@
-# blog.different-name.com
+# [different-name.dev](https://different-name.dev)
 
 ## Acknowledgements
 

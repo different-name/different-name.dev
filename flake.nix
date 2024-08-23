@@ -1,5 +1,5 @@
 {
-  description = "Flake for building blog.different-name.com";
+  description = "Flake for building different-name.dev";
 
   inputs = {
     anemone = {
