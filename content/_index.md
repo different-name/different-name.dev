@@ -18,7 +18,7 @@ While this blog is more of my own personal log than any kind of tutorial, I hope
 
 ### NixOS
 
-I'm currently exploring NixOS, a linux operating system build around Nix, a declarative package manager. My NixOS configuration files are publicly available @ [github:different-name/nix-files](https://github.com/different-name/nix-files). View my posts o
+I'm currently exploring NixOS, a linux operating system build around Nix, a declarative package manager. My NixOS configuration files are publicly available @ [github:different-name/nix-files](https://github.com/different-name/nix-files). View my posts on NixOS [here](/tags/nixos)
 
 ### Time Pilot DMG
 
