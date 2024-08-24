@@ -21,9 +21,13 @@
     inputs.flake-parts.lib.mkFlake {inherit inputs;} {
       systems = import inputs.systems;
 
-      perSystem = { self', pkgs, ...}: let
-        theme = inputs.anemone;
-        themeName = ((builtins.fromTOML (builtins.readFile "${theme}/theme.toml")).name);
+      perSystem = {
+        self',
+        pkgs,
+        ...
+      }: let
+        inherit (inputs) anemone;
+        themeName = (builtins.fromTOML (builtins.readFile "${anemone}/theme.toml")).name;
       in {
         packages = {
           different-name-blog = pkgs.stdenv.mkDerivation {
@@ -33,7 +37,7 @@
             nativeBuildInputs = with pkgs; [zola];
             configurePhase = ''
               mkdir -p "themes/${themeName}"
-              cp -r ${theme}/. "themes/${themeName}"
+              cp -r ${anemone}/. "themes/${themeName}"
             '';
             buildPhase = "zola build";
             installPhase = "cp -r public $out";
@@ -46,7 +50,8 @@
           packages = with pkgs; [zola];
           shellHook = ''
             mkdir -p themes
-            ln -sn "${theme}" "themes/${themeName}"
+            rm "themes/${themeName}"
+            ln -sn "${anemone}" "themes/${themeName}"
           '';
         };
       };

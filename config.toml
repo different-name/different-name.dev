@@ -1,7 +1,7 @@
 # The URL the site will be built for
 base_url = "https://different-name.dev"
 
-title = "different-name's blog"
+title = "different-name.dev"
 
 theme = "anemone"
 
@@ -13,6 +13,10 @@ author = "different-name"
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = false
 
+taxonomies = [
+    {name = "tags", feed = true},
+]
+
 [markdown]
 # Whether to do syntax highlighting
 # Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
@@ -20,16 +24,17 @@ highlight_code = true
 
 [extra]
 # Put all your custom variables here
+site_title = "different-name.dev"
+
 header_nav = [
   { url = "/", name_en = "/home/" },
   { url = "/blog", name_en = "/blog/" },
   { url = "/about", name_en = "/about/" },
-  { url = "/contact", name_en = "/contact/" },
 ]
 
 footer_content_license = "GPL-3.0"
 footer_content_license_link = "https://www.gnu.org/licenses/gpl-3.0.html"
 
-display_author = true
+github_repository_link = "https://github.com/different-name/different-name.dev"
 
 twitter_card = true

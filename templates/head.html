@@ -1,0 +1,228 @@
+<meta charset="UTF-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<meta name="robots" content="index, follow">
+{% if page.title %}
+{% set title = page.title %}
+{% elif section.title %}
+{% set title = section.title %}
+{% elif config.title %}
+{% set title = config.title %}
+{% endif %}
+{% if page.extra.author %}
+{% set author = page.extra.author %}
+{% elif section.extra.author %}
+{% set author = section.extra.author %}
+{% elif config.extra.author %}
+{% set author = config.extra.author %}
+{% endif %}
+{% if page.description %}
+{% set description = page.description | truncate(length=150) %}
+{% elif section.description %}
+{% set description = section.description | truncate(length=150) %}
+{% elif config.description %}
+{% set description = config.description | truncate(length=150) %}
+{% endif %}
+{% if page.extra.image %}
+{% set image = get_url(path=page.extra.image, trailing_slash=false) %}
+{% elif section.extra.image %}
+{% set image = get_url(path=section.extra.image, trailing_slash=false) %}
+{% elif config.extra.favicon %}
+{% set image = get_url(path=config.extra.favicon, trailing_slash=false) %}
+{% endif %}
+{% if page.permalink %}
+{% set url = page.permalink %}
+{% elif section.permalink %}
+{% set url = section.permalink %}
+{% elif config.base_url %}
+{% set url = config.base_url %}
+{% endif %}
+{% if title %}
+{% if config.extra.site_title and title != config.extra.site_title %}
+<title>{{ title }} - {{ config.extra.site_title }}</title>
+{% else %}
+<title>{{ title }}</title>
+{% endif %}
+{% endif %}
+{% block metatags %}
+{% if title %}
+<meta name="title" content="{{ title }}">
+{% endif %}
+{% if author %}
+<meta name="author" content="{{ author }}">
+{% endif %}
+{% if description %}
+<meta name="description" content="{{ description }}">
+{% endif %}
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ url | safe }}">
+{% if title %}
+<meta property="og:site_name" content="{{ config.title }}">
+{% endif %}
+{% if title %}
+<meta property="og:title" content="{{ title }}">
+{% endif %}
+{% if description %}
+<meta property="og:description" content="{{ description }}">
+{% endif %}
+{% if image %}
+<meta property="og:image" content="{{ image }}">
+{% endif %}
+{% set twitter_card = config.extra.twitter_card | default(value=true) %}
+{% if twitter_card != false %}
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="{{ url | safe }}">
+{% if title %}
+<meta property="twitter:title" content="{{ title }}">
+{% endif %}
+{% if description %}
+<meta property="twitter:description" content="{{ description }}">
+{% endif %}
+{% if image %}
+<meta property="twitter:image" content="{{ image }}">
+{% endif %}
+{% endif %}
+<link rel="canonical" href="{{ url | safe }}">
+{% if image %}
+<link rel="shortcut icon" type="image/x-icon" href="{{ get_url(path=config.extra.favicon, trailing_slash=false) }}">
+{% endif %}
+{% endblock metatags %}
+{% if config.generate_feeds %}
+{% block feed %}
+<link rel="alternate" type="application/atom+xml" title="RSS" href="{{ get_url(path="atom.xml", trailing_slash=false) }}"> 
+{% endblock feed %}
+{% endif %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="https://speyll.github.io/suCSS/reset-min.css"/>
+<link rel="stylesheet" type="text/css" href="https://speyll.github.io/suCSS/suCSS-min.css"/>
+<link rel="stylesheet" type="text/css" href="{{ get_url(path='css/style.css', trailing_slash=false) | safe }}"/>
+<style>
+  :root,
+  ::backdrop {
+    --cl-base: #eff1f5;
+    --cl-crust: #dce0e8;
+    --cl-text: #4c4f69;
+    --cl-subtext-0: #6c6f85;
+    --cl-maroon: #e64553;
+    --cl-peach: #fe640b;
+    --cl-sapphire: #209fb5;
+
+    --cm-base: #1e1e2e;
+    --cm-mantle: #181825;
+    --cm-text: #cdd6f4;
+    --cm-subtext-0: #a6adc8;
+    --cm-red: #f38ba8;
+    --cm-peach: #fab387;
+    --cm-sapphire: #74c7ec;
+
+    /* default colors */
+    --bg: var(--cl-base) !important;
+    --bg-light: var(--cl-crust) !important;
+    --text: var(--cl-text) !important;
+    --text-light: var(--cl-subtext-0) !important;
+    --accent: var(--cl-maroon) !important;
+    --accent-light: var(--cl-peach) !important;
+    --accent-text: var(--cl-base) !important;
+    --border: var(--cl-subtext-0) !important;
+    --link: var(--cl-sapphire) !important;
+  }
+
+  /* theme media queries */
+  @media (prefers-color-scheme: dark) {
+    :root,
+    ::backdrop {
+      color-scheme: dark !important;
+      --bg: var(--cm-base) !important;
+      --bg-light: var(--cm-mantle) !important;
+      --text: var(--cm-text) !important;
+      --text-light: var(--cm-subtext-0) !important;
+      --accent: var(--cm-red) !important;
+      --accent-light: var(--cm-peach) !important;
+      --accent-text: var(--cm-base) !important;
+      --border: var(--cm-subtext-0) !important;
+      --link: var(--cm-sapphire) !important;
+    }
+  }
+
+  @media (prefers-color-scheme: light) {
+    :root,
+    ::backdrop {
+      color-scheme: light !important;
+      --bg: var(--cl-base) !important;
+      --bg-light: var(--cl-crust) !important;
+      --text: var(--cl-text) !important;
+      --text-light: var(--cl-subtext-0) !important;
+      --accent: var(--cl-maroon) !important;
+      --accent-light: var(--cl-peach) !important;
+      --accent-text: var(--cl-base) !important;
+      --border: var(--cl-subtext-0) !important;
+      --link: var(--cl-sapphire) !important;
+    }
+  }
+
+  [data-theme="light"] {
+    /* default (light) theme */
+    color-scheme: light !important;
+      --bg: var(--cl-base) !important;
+      --bg-light: var(--cl-crust) !important;
+      --text: var(--cl-text) !important;
+      --text-light: var(--cl-subtext-0) !important;
+      --accent: var(--cl-maroon) !important;
+      --accent-light: var(--cl-peach) !important;
+      --accent-text: var(--cl-base) !important;
+      --border: var(--cl-subtext-0) !important;
+      --link: var(--cl-sapphire) !important;
+  }
+
+  [data-theme="dark"] {
+    color-scheme: dark !important;
+      --bg: var(--cm-base) !important;
+      --bg-light: var(--cm-mantle) !important;
+      --text: var(--cm-text) !important;
+      --text-light: var(--cm-subtext-0) !important;
+      --accent: var(--cm-red);
+      --accent-light: var(--cm-peach) !important;
+      --accent-text: var(--cm-base) !important;
+      --border: var(--cm-subtext-0) !important;
+      --link: var(--cm-sapphire) !important;
+  }
+
+  main {
+    padding-bottom: 1em;
+    position: relative;
+  }
+
+  * + h1,
+  * + h2,
+  * + h3,
+  * + h4,
+  * + h5 {
+    margin-top: 1.5em;
+  }
+
+  time + h1 {
+    margin-top: .75em;
+  }
+
+  blockquote {
+    padding: .5rem 0 .5rem 1rem;
+  }
+
+  blockquote > p {
+    margin: 0
+  }
+
+  .tags-data {
+    margin: 0;
+    flex-direction: row;
+    gap: .5rem;
+  }
+
+  #nav-bar {
+    gap: .5rem;
+  }
+</style>
+{% endblock css %}
+<script src="{{ get_url(path='js/script.js', trailing_slash=false) | safe }}" defer></script>
+
