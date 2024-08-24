@@ -1,6 +1,6 @@
 +++
 
-title = "about"
+title = "About"
 
 +++
 
