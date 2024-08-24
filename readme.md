@@ -2,7 +2,7 @@
 
 My personal dev blog, where I share anything and everything I'm interested in and what I'm currently working on
 
-Live using Cloudflare pages @ [different-name.dev](https://different-name.dev)
+Live using Cloudflare pages at [different-name.dev](https://different-name.dev)
 
 ## Building
 
