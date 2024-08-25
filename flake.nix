@@ -48,10 +48,14 @@
 
         devShells.default = pkgs.mkShell {
           packages = with pkgs; [zola];
-          shellHook = ''
+          shellHook = let
+            themePath = "themes/${themeName}";
+          in ''
             mkdir -p themes
-            rm "themes/${themeName}"
-            ln -sn "${anemone}" "themes/${themeName}"
+            if [ -L "${themePath}" ]; then
+              rm "${themePath}"
+            fi
+            ln -sn "${anemone}" "${themePath}"
           '';
         };
       };
