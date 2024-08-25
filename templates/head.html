@@ -103,7 +103,7 @@
     --cl-base: #eff1f5;
     --cl-crust: #dce0e8;
     --cl-text: #4c4f69;
-    --cl-subtext-0: #6c6f85;
+    --cl-subtext-1: #5c5f77;
     --cl-maroon: #e64553;
     --cl-peach: #fe640b;
     --cl-sapphire: #209fb5;
@@ -111,7 +111,7 @@
     --cm-base: #1e1e2e;
     --cm-mantle: #181825;
     --cm-text: #cdd6f4;
-    --cm-subtext-0: #a6adc8;
+    --cm-subtext-1: #bac2de;
     --cm-red: #f38ba8;
     --cm-peach: #fab387;
     --cm-sapphire: #74c7ec;
@@ -120,11 +120,11 @@
     --bg: var(--cl-base) !important;
     --bg-light: var(--cl-crust) !important;
     --text: var(--cl-text) !important;
-    --text-light: var(--cl-subtext-0) !important;
+    --text-light: var(--cl-subtext-1) !important;
     --accent: var(--cl-maroon) !important;
     --accent-light: var(--cl-peach) !important;
     --accent-text: var(--cl-base) !important;
-    --border: var(--cl-subtext-0) !important;
+    --border: var(--cl-subtext-1) !important;
     --link: var(--cl-sapphire) !important;
   }
 
@@ -136,11 +136,11 @@
       --bg: var(--cm-base) !important;
       --bg-light: var(--cm-mantle) !important;
       --text: var(--cm-text) !important;
-      --text-light: var(--cm-subtext-0) !important;
+      --text-light: var(--cm-subtext-1) !important;
       --accent: var(--cm-red) !important;
       --accent-light: var(--cm-peach) !important;
       --accent-text: var(--cm-base) !important;
-      --border: var(--cm-subtext-0) !important;
+      --border: var(--cm-subtext-1) !important;
       --link: var(--cm-sapphire) !important;
     }
   }
@@ -152,11 +152,11 @@
       --bg: var(--cl-base) !important;
       --bg-light: var(--cl-crust) !important;
       --text: var(--cl-text) !important;
-      --text-light: var(--cl-subtext-0) !important;
+      --text-light: var(--cl-subtext-1) !important;
       --accent: var(--cl-maroon) !important;
       --accent-light: var(--cl-peach) !important;
       --accent-text: var(--cl-base) !important;
-      --border: var(--cl-subtext-0) !important;
+      --border: var(--cl-subtext-1) !important;
       --link: var(--cl-sapphire) !important;
     }
   }
@@ -167,11 +167,11 @@
       --bg: var(--cl-base) !important;
       --bg-light: var(--cl-crust) !important;
       --text: var(--cl-text) !important;
-      --text-light: var(--cl-subtext-0) !important;
+      --text-light: var(--cl-subtext-1) !important;
       --accent: var(--cl-maroon) !important;
       --accent-light: var(--cl-peach) !important;
       --accent-text: var(--cl-base) !important;
-      --border: var(--cl-subtext-0) !important;
+      --border: var(--cl-subtext-1) !important;
       --link: var(--cl-sapphire) !important;
   }
 
@@ -180,11 +180,11 @@
       --bg: var(--cm-base) !important;
       --bg-light: var(--cm-mantle) !important;
       --text: var(--cm-text) !important;
-      --text-light: var(--cm-subtext-0) !important;
+      --text-light: var(--cm-subtext-1) !important;
       --accent: var(--cm-red);
       --accent-light: var(--cm-peach) !important;
       --accent-text: var(--cm-base) !important;
-      --border: var(--cm-subtext-0) !important;
+      --border: var(--cm-subtext-1) !important;
       --link: var(--cm-sapphire) !important;
   }
 
@@ -223,6 +223,11 @@
 
   #nav-bar {
     gap: .5rem;
+  }
+
+  div code, li code, p code {
+    color: var(--text-light) !important;
+    background-color: var(--bg-light) !important; 
   }
 </style>
 {% endblock css %}
