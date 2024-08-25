@@ -26,6 +26,8 @@ highlight_code = true
 # Put all your custom variables here
 site_title = "different-name.dev"
 
+favicon = "bookmark.ico"
+
 header_nav = [
   { url = "/", name_en = "/home/" },
   { url = "/blog", name_en = "/blog/" },
