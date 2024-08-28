@@ -4,9 +4,30 @@ My personal dev blog, where I share anything and everything I'm interested in an
 
 Live using Cloudflare pages at [different-name.dev](https://different-name.dev)
 
-## Building
+## Usage
 
-### Nix Flakes
+Clone the repository
+
+```console
+git clone https://github.com/different-name/different-name.dev
+```
+
+Enter the project directory
+
+```console
+cd different-name.dev
+```
+
+
+### Building (Nix Flakes)
+
+Build the static site
+
+```console
+nix build
+```
+
+### Developing (Nix Flakes)
 
 Enter the development shell
 
@@ -14,13 +35,7 @@ Enter the development shell
 nix develop
 ```
 
-Build with zola
-
-```console
-zola build
-```
-
-Or start a local development server
+Start a local development server
 
 ```console
 zola serve
