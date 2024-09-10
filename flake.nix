@@ -38,7 +38,7 @@
         packages = {
           different-name-blog = pkgs.stdenv.mkDerivation {
             pname = "different-name-blog";
-            version = "2024-08-23";
+            version = "2024-09-10";
             src = ./.;
             nativeBuildInputs = with pkgs; [zola];
             configurePhase = ''
