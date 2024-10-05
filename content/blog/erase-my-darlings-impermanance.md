@@ -19,7 +19,7 @@ When you first set up a fresh OS, everything feels clean and fresh. As Graham pu
 
 > Getting a new computer is this moment of cleanliness. The keycaps don’t have oils on them, the screen is perfect, and the hard drive is fresh and unspoiled
 
-You may feel the need to reinstall you operating system sometimes, either because things are running slow, your system is unstable, or just because everything feels "messy".
+You may feel the need to reinstall your operating system sometimes, either because things are running slow, your system is unstable, or just because everything feels "messy".
 
 A reinstall is usually great at resolving these issues, but we end up nuking everything. Files, applications, configurations, fixes and tweaks. So we need to backup beforehand. However, it's quite a large and scary job to choose what to backup and it's almost impossible to sort through the application state and configuration that has been irrevocably spread through the file system by various applications.
 
