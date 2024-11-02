@@ -24,6 +24,10 @@ I'm currently exploring NixOS, a Linux operating system build around Nix, a decl
 
 A passion project of mine, porting my favourite arcade game [Time Pilot](https://en.wikipedia.org/wiki/Time_Pilot) to the original Game Boy. This project is written in C using the [GBDK-2020](https://github.com/gbdk-2020/gbdk-2020) development kit, and is 100% compatible with the original DMG Game Boy, using real cartridges. The project files are available at [github:different-name/time-pilot-dmg](https://github.com/different-name/time-pilot-dmg).
 
+### Hand wired split keyboard
+
+I'm currently finishing up my hand wired keyboard! More info and pictures coming soon in a blog post, but it's fully hand wired and running QMK with a 3D printed case.
+
 ## Where now?
 
 - Browse my latest [blog posts](@/blog/_index.md).
