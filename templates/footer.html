@@ -1,30 +1,37 @@
 <hr>
 <div id="footer-container">
   {% if config.extra.footer_content_license %}
-    <div>Content on this site is licensed under a 
+  <div>content on this site is licensed under a
     {% if config.extra.footer_content_license_link %}
-    <a target="_blank" rel="noopener noreferrer" href="{{config.extra.footer_content_license_link}}">{{config.extra.footer_content_license}}</a>
+    <a target="_blank" rel="noopener noreferrer"
+      href="{{config.extra.footer_content_license_link}}">{{config.extra.footer_content_license}}</a>
     {% else %}
     {{config.extra.footer_content_license}}
     {% endif %}
-    license.
+    license
     {% if config.extra.github_repository_link %}
     <br>
-    View this blog's source on <a target="_blank" rel="noopener noreferrer" href="{{config.extra.github_repository_link}}">github</a>.
+    view this blog's source on <a target="_blank" rel="noopener noreferrer"
+      href="{{config.extra.github_repository_link}}">github</a>
     {% endif %}
-    </div>
+  </div>
   {% endif %}
   <div>
   </div>
   <div>
     <p>
-      Built with <a target="_blank" rel="noopener noreferrer" href="https://www.getzola.org">Zola</a> using <a target="_blank" rel="noopener noreferrer" href="https://github.com/Speyll/anemone">anemone</a> theme and <a target="_blank" rel="noopener noreferrer" href="https://catppuccin.com/">Catppuccin</a> color palettes.<br>
+      built with <a target="_blank" rel="noopener noreferrer" href="https://www.getzola.org">zola</a> using <a
+        target="_blank" rel="noopener noreferrer" href="https://github.com/Speyll/anemone">anemone</a> theme and <a
+        target="_blank" rel="noopener noreferrer" href="https://catppuccin.com/">catppuccin</a> color palettes<br>
     </p>
 
   </div>
   {% if config.generate_feeds %}
   <div>
-    <a class="no-style" target="_blank" rel="noopener noreferrer" href="{{ get_url(path="atom.xml", trailing_slash=false) }}" title="Subscribe via RSS for updates."><svg class="icons"><use href="{{ get_url(path='icons.svg#rss', trailing_slash=false) | safe }}"></use></svg></a>
+    <a class="no-style" target="_blank" rel="noopener noreferrer" href="{{ get_url(path=" atom.xml",
+      trailing_slash=false) }}" title="Subscribe via RSS for updates."><svg class="icons">
+        <use href="{{ get_url(path='icons.svg#rss', trailing_slash=false) | safe }}"></use>
+      </svg></a>
   </div>
   {% endif %}
 </div>
