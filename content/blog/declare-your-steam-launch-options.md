@@ -4,9 +4,6 @@ title = "declare your steam launch options"
 date = "2025-06-20"
 slug = "declare-your-steam-launch-options"
 
-[taxonomies]
-  tags = ["nixos", "home-manager"]
-
 +++
 
 the steam client allows users to specify "launch options" for each of their games. These can be used to specify environmental variables, arguments, options and even wrapper commands

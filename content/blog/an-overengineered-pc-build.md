@@ -4,9 +4,6 @@ title = "an overengineered pc build"
 date = "2024-11-02"
 slug = "an-overengineered-pc-build"
 
-[taxonomies]
-  tags = ["computer-hardware", "3d-printing"]
-
 +++
 
 ## the pop mini air
